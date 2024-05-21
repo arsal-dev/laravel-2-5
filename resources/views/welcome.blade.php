@@ -9,7 +9,28 @@
 </head>
 
 <body>
-    <h3>welcome</h3>
+    <h3>{{ $myData }}</h3>
+
+    {{-- @php
+        echo $myData;
+    @endphp --}}
+
+    {{-- @if (1 == 1)
+        <p>{{ $myData }}</p>
+    @elseif (2 == 1)
+        <p>not true</p>
+    @elseif (2 == 1)
+        <p>not true</p>
+    @else
+        
+    @endif --}}
+
+    @dump($languages)
+
+    {{-- @php
+        print_r($languages);
+    @endphp --}}
+
 </body>
 
 </html>
