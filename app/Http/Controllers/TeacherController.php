@@ -12,7 +12,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers = Teacher::get();
+        $teachers = Teacher::withTrashed()->paginate(10);
         return view('teacher.all', ['teachers' => $teachers]);
     }
 
@@ -62,9 +62,11 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
+        $teacher_id = $teacher->id;
+
         $validated_data = $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => "required|email|unique:teachers,email,$teacher_id",
             'phone' => 'required|numeric',
             'address' => 'required'
         ]);

@@ -27,3 +27,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::resource('/student', StudentController::class);
 Route::resource('/teacher', TeacherController::class);
+
+Route::get('/teachers/trash', [HomeController::class, 'trash'])->name('teacher.trash');
+
+Route::get('/teachers/{id}');

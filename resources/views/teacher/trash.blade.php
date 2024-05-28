@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>all teacher</title>
+    <title>all trashed teacher</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h3 class="text-center mt-5">all teacher</h3>
+    <h3 class="text-center mt-5">all trashed teacher</h3>
 
     <div class="container">
         @if (session()->has('success'))
@@ -34,8 +34,8 @@
                     <th>email</th>
                     <th>phone</th>
                     <th>address</th>
-                    <th>update</th>
-                    <th>delete</th>
+                    <th>restore</th>
+                    <th>delete forever</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,7 +52,7 @@
                         <td>{{ $teacher->email }}</td>
                         <td>{{ $teacher->phone }}</td>
                         <td>{{ $teacher->address }}</td>
-                        <td><a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-primary">update</a></td>
+                        <td><a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-primary">restore</a></td>
                         <td>
                             <form action="{{ route('teacher.destroy', $teacher->id) }}" method="POST">
                                 @csrf

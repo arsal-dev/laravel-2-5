@@ -41,7 +41,7 @@
             </div>
             <div>
                 <label for="phone">phone</label>
-                <input type="number" name="phone" id="phone" value="{{ old('phone') }}"
+                <input type="text" name="phone" id="phone" value="{{ old('phone') }}"
                     class="form-control @error('phone')
                 is-invalid
             @enderror">
