@@ -27,6 +27,15 @@ class HomeController extends Controller
 
     public function restore($id)
     {
-        // 
+        Teacher::onlyTrashed()->find($id)->restore();
+
+        return redirect()->route('teacher.index')->with('success', 'record restored successfully');
+    }
+
+    public function delete($id)
+    {
+        Teacher::onlyTrashed()->find($id)->forceDelete();
+
+        return redirect()->route('teacher.index')->with('success', 'record deleted from trash successfully');
     }
 }

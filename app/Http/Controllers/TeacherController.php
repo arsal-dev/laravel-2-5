@@ -12,7 +12,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers = Teacher::withTrashed()->paginate(10);
+        $teachers = Teacher::paginate(10);
         return view('teacher.all', ['teachers' => $teachers]);
     }
 

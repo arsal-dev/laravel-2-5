@@ -24,7 +24,8 @@
             </div>
         @endif
 
-        <a href="{{ route('teacher.create') }}">add a new teacher</a>
+        <a href="{{ route('teacher.create') }}">add a new teacher</a> |
+        <a href="{{ route('teachers.trash') }}">view trashed records</a>
 
         <table class="table table-striped">
             <thead>

@@ -52,9 +52,10 @@
                         <td>{{ $teacher->email }}</td>
                         <td>{{ $teacher->phone }}</td>
                         <td>{{ $teacher->address }}</td>
-                        <td><a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-primary">restore</a></td>
+                        <td><a href="{{ route('teachers.restore', $teacher->id) }}" class="btn btn-primary">restore</a>
+                        </td>
                         <td>
-                            <form action="{{ route('teacher.destroy', $teacher->id) }}" method="POST">
+                            <form action="{{ route('teachers.delete', $teacher->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="delete">
